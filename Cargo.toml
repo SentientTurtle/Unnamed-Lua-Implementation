@@ -1,0 +1,25 @@
+[package]
+name = "lua_interpreter"
+version = "0.1.0"
+authors = ["SentientTurtle"]
+edition = "2018"
+publish = false
+
+[features]
+default = ["file-io"]
+file-io = []
+os-env = ["os_str_bytes"]
+os-env-exit = ["os-env"]
+
+[dependencies]
+regex = "1.5.4"
+nom = "6.1.2"
+rand = "0.8.3"
+os_str_bytes = { version = "4.2.0", optional = true }
+
+#[profile.test]
+#opt-level = 3
+#debug-assertions = false
+
+#[lib]
+#crate-type = ["lib"]
